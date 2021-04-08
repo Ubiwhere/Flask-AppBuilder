@@ -633,14 +633,14 @@ class BaseSecurityManager(AbstractSecurityManager):
             data = me.json()
             log.debug("User info from OAuth Provider: {0}".format(data))
             return {
-                "preferred_username": data.get("preferred_username", ""),
+                "preferred_username": data.get("preferred_username",""),
                 "first_name": data.get("given_name", ""),
                 "last_name": data.get("family_name", ""),
                 "email": data.get("email", ""),
                 "name": data.get("name", ""),
                 "username": data.get("preferred_username", ""),
                 "id": data.get("sub", ""),
-                "roles": data.get('resource_access', {}).get('keycloak', {}).get("roles", [])
+                "roles": data.get("roles", [])
             }
         else:
             return {}
