@@ -640,7 +640,7 @@ class BaseSecurityManager(AbstractSecurityManager):
                 "name": data.get("name", ""),
                 "username": data.get("preferred_username", ""),
                 "id": data.get("sub", ""),
-                "roles": data.get("roles", [])
+                "role_keys": data.get("roles", [])
             }
         else:
             return {}
